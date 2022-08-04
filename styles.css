@@ -1,0 +1,448 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,700&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-padding-top: 2rem; /* this property is for:  */
+    scroll-behavior: smooth;
+    list-style: none; /* removes the dots from the UL elements*/
+    text-decoration: none;
+    background-color: white;
+   
+}
+
+:root { /* these are global variables decleared inside of the :root selector */
+    --main-color: #A66CFF;
+    --second-color: #C689C6;
+    --text-color: #395B64;
+    --gradient: linear-gradient(#b560f9,#C689C6);
+ } 
+
+/* Custom scroll bar */
+
+html::-webkit-scrollbar {
+    width: 0.5rem;
+}
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+html::-webkit-scrollbar-thumb {
+   background: var(--gradient);
+   border-radius: 5rem;
+}
+
+
+/* header */
+
+header {
+ 
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000; /*  The z-index property specifies the stack order of an element. */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    padding: 5px 100px;
+    height: 70px;
+}
+
+
+#menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10001; /*An element with greater stack order is always in front of an element with a lower stack order.*/
+    display: none;
+}
+.nav-bar {
+display: flex;
+max-height: 50px;
+
+}
+.nav-bar li{
+position: relative;  /* so the nav bar hover affect can work */
+
+}
+.nav-bar a{
+ size: 1rem;
+  padding: 10px;
+  color: var(--text-color);
+  font-weight: 500;
+}
+ /* for the bottom inline  effect */
+.nav-bar a::after {
+content: "";
+width: 0;
+height: 3px;
+background: var(--gradient);
+position: absolute;
+bottom: -4px;
+left: 0;
+transition: 0.5s;
+}
+.nav-bar a:hover::after{
+    width: 100%;
+}
+.logo {
+    width: 100px;
+    margin-top: 20px;
+}
+
+
+/* home */
+
+#Home {
+    max-width: 100vw;
+    min-height: 70vh;
+}
+.home-text-pic {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+   padding: 0 5vw;
+}
+.home-pic img {
+    width: 100%;
+    max-width: 50rem;
+    float: right;
+    animation: float 6s ease-in-out infinite;
+}
+@keyframes float {
+    0% {
+	
+		transform: translatey(0px);
+	}
+	50% {
+		
+		transform: translatey(-20px);
+	}
+	100% {
+		
+		transform: translatey(0px);
+	}
+}
+.home-text {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  
+}
+h2 {
+    font-size: clamp(3rem, 6vw, 4.6rem);
+    text-align: center;
+    color: #395B64;
+}
+h2 span {
+    color: var(--main-color);
+    font-weight: 700;
+}
+p{
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 30px;
+    color: #395B64;
+    font-size:  clamp(1rem, 1vw, 1.5rem);
+    font-weight: 700;
+   
+}
+
+
+.button{
+   
+    background-color: #A66CFF;
+    color: azure;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 700;
+   margin:  0 auto;
+}
+.button:hover {
+  
+    color: #F0EBE3;
+    transition: 0.7s;
+}
+.socialIcons {
+    display: flex;
+    justify-content: center;
+   margin-top: 30px;
+}
+.socialIcons i{
+  font-size: 1.2rem;
+  font-weight: 600;
+  background-color:#395B64;
+  padding: 10px;
+  border-radius: 100%;
+  margin: 0 5px;
+  cursor: pointer;
+  color: #fff;
+
+  
+}
+.socialIcons i:hover{
+   
+   color: #EEEEEE;
+    transform: rotate(20deg);
+    transition: 0.6s;
+ }
+ hr {
+   
+    width: 20%;
+   margin: 40px auto;
+   border: 3px solid #395B64;
+   border-radius: 15px;
+ }
+
+ /* about us page */
+
+ #About {
+    max-width: 100vw;
+    min-height: 70vh;
+}
+.about-text-pic {
+    margin-top: 100px;
+    display: flex;
+    margin-left: 5vw;
+    display: flex;
+    flex-wrap: wrap;
+
+    
+} 
+ .about-pic img{
+    width: 100%;
+    max-width: 34rem;
+    min-width: 22rem;
+    
+    float: left;
+    animation: float 6s ease-in-out infinite;
+}
+.about-text {
+    display: flex;
+    justify-content: left;
+    margin-top: 50px;
+    flex-direction: column;
+    max-width: 420px;
+}
+.about-text h2 {
+    font-size: clamp(2.5rem, 4vw, 3rem);
+    margin-bottom: 20px;
+}
+.about-text p {
+    font-size: clamp(1rem, 1vw, 1.4rem);
+}
+.about-text span{
+color: var(--main-color);
+}
+/* 
+services section */
+ 
+#Services {
+    max-width: 100vw;
+    min-height: 80vh;
+}
+.title{
+    font-size: clamp(2.5rem, 4vw, 3rem);
+    margin-bottom: 20px;
+}
+.services-text-cards {
+    margin-top: 50px;
+    margin-bottom: 150px;
+}
+.services-cards {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.card {
+    height: 600px;
+    width: 350px;
+    box-shadow: 0 2px 4px 2px var(--main-color);
+   margin: 20px 10px;
+   border-radius: 15px;
+   position: relative;
+}
+
+.card-price {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    border: 2px solid var(--main-color);
+    border-radius: 50px;
+    padding: 0 10px;
+    color: var(--main-color);
+    font-weight: 600;
+}
+.card img {
+    margin-top: 5px;
+    width: 100%;
+    height: 40%;
+}
+.card h3 {
+    color: var(--text-color);
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.4rem;
+}
+.card p {
+    padding: 0 10px;
+}
+
+/* contact page */
+
+#Contact {
+    max-width: 100vw;
+    min-height: 90vh;
+}
+.contact-pic-form {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+   margin-top: 100px;
+    flex-wrap: wrap;
+   padding: 0 15vw;
+ 
+}
+
+.contact-pic img {
+    width:   100%;
+    max-width: 30rem;
+    min-width: 22rem;;
+    animation: float 6s ease-in-out infinite;
+}
+.contact-form {
+    width: 20rem;
+    position: relative;
+    
+}
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    display: block;
+
+}
+
+form input{
+    margin-bottom: 40px;
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 40px;
+    resize: none;
+    border: 1px solid var(--text-color);
+    outline: 0;
+
+}
+form textarea {
+    margin-bottom: 40px;
+    width: 100%;
+    padding: 30px 20px;
+    border-radius: 40px;
+    resize: none;
+    border: 1px solid var(--text-color);
+    outline: 0; 
+} 
+form label {
+    font-size: 0.9rem;
+    font-weight: 700;
+    background-color: white;
+    padding: 0 1px;
+}
+.firstLabel {
+    position: absolute;
+    top: -10px;
+    left:50px;
+}
+.secondLabel {
+    position: absolute;
+    top: 73px;
+    left:50px;
+}
+.thirdLabel {
+    position: absolute;
+    top: 155px;
+    left:50px;
+}
+.symbol{
+    color: var(--main-color);
+    font-weight: 700;
+}
+button {
+    padding: 5px 20px;
+    border-radius: 40px;
+    cursor: pointer;
+    font-weight: 700;
+}
+button:hover {
+
+    color: #395B64;
+    transition: 0.7s;
+}
+footer {
+    height: 5vh;
+    background-color: var(--text-color);
+}
+.madeBy {
+    background-color: var(--text-color);
+    color: #EEEEEE;
+    font-weight: 700;
+   position: relative;
+   top: 1vh;
+}
+.scrollBack {
+    font-size:  2rem;
+    position: fixed; /* Fixed/sticky position */
+    bottom: 80  px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    
+}
+
+@media (max-width: 1239px){
+    .home-text-pic {
+        flex-direction: column-reverse;
+
+       
+       }
+       .about-text-pic {
+        justify-content: center;
+       }
+       .contact-pic-form {
+        justify-content: center;
+       }
+     .contact-pic {
+        display: none;
+       
+     }
+}
+@media (max-width: 500px) {
+
+    header {
+         width: 100%;
+         padding-left: 5px;
+         padding-right: 20px;
+    }
+
+  
+    #menu-icon {
+        display: initial;
+        position: absolute;
+        top: 25px;
+        left: 88px;
+
+    }
+    .nav-bar {
+        display: none;
+    }
+   .home-text-pic {
+    flex-direction: column-reverse;
+   
+   }
+   .contact-pic {
+  display: none;
+   }
+}
