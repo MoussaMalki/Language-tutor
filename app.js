@@ -28,3 +28,27 @@ let mainPic = doc.querySelector(`.home-pic`);
 //     mainPic.style.cssText = `position: relative; top: `
 //   }, 500);
 // }, 5000);
+
+window.onscroll = function (e) {
+  console.log(window.scrollY); // Value of scroll Y in px
+  if (window.scrollY > 650) {
+    doc.querySelector(`.scrollBack`).style.cssText = `display: initial`;
+  }
+  if (window.scrollY < 650) {
+    doc.querySelector(`.scrollBack`).style.cssText = `display: none`;
+  }
+};
+
+/// ====> for side bar
+
+let dropMenu = doc.querySelector(".sidenav");
+dropMenu.style.cssText = `display: none`;
+doc.querySelector("#menu-icon").onclick = () => {
+  dropMenu.style.cssText = `display: flex;`;
+};
+
+doc.querySelectorAll("section").forEach((e) => {
+  e.addEventListener("click", () => {
+    dropMenu.style.cssText = `display: none`;
+  });
+});
