@@ -12,12 +12,16 @@ const sr = ScrollReveal({
 
 sr.reveal(`.logo`, { delay: 200, origin: `bottom` });
 sr.reveal(`.nav-bar`, { delay: 200, origin: `right` });
+sr.reveal(`#menu-icon`, { delay: 200, origin: `left` });
 sr.reveal(`.home-text h2, p, .home-text a`, { delay: 400, origin: `top` });
 sr.reveal(`.socialIcons`, { delay: 500, origin: `left` });
+sr.reveal(`.title`, { delay: 500, origin: `left` });
 sr.reveal(`.home-pic`, { delay: 600, origin: `top` });
 sr.reveal(`.about-pic`, { delay: 600, origin: `bottom` });
 sr.reveal(`.about-text`, { delay: 600, origin: `top` });
 sr.reveal(`.card`, { delay: 600, origin: `top` });
+sr.reveal(`.contact-form`, { delay: 600, origin: `top` });
+sr.reveal(`.contact-pic`, { delay: 600, origin: `bottom` });
 
 // =================> main pic animation
 
@@ -30,7 +34,6 @@ let mainPic = doc.querySelector(`.home-pic`);
 // }, 5000);
 
 window.onscroll = function (e) {
-  console.log(window.scrollY); // Value of scroll Y in px
   if (window.scrollY > 650) {
     doc.querySelector(`.scrollBack`).style.cssText = `display: initial`;
   }

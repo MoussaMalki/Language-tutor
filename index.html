@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="color-scheme" content="light only" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Moussa</title>
     <link rel="stylesheet" href="styles.css" />
@@ -38,7 +39,7 @@
         <div class="home-text">
           <h2>Hi it's <span>Moussa </span></h2>
           <p>an <span> Arabic & English</span> Tutor</p>
-          <a href="" class="button">Contact</a>
+          <a href="#Contact" class="button">Contact</a>
           <div class="socialIcons">
             <a href="https://www.instagram.com/moussa_malki21/?hl=en">
               <i class="bx bxl-instagram"></i
@@ -141,28 +142,39 @@
       <div class="contact-pic-form">
         <div class="contact-form">
           <form
-            action="https://formsubmit.co/Moussawebdev@email.com"
+            action="https://formsubmit.co/itsmoussadev@email.com"
             method="POST"
           >
             <label for="text" class="firstLabel"
               >NAME<span class="symbol">*</span></label
             >
-            <input type="text" placeholder="Moussa Malki" />
+            <input
+              type="text"
+              name="Name"
+              placeholder="Moussa Malki"
+              required
+            />
             <label for="text" class="secondLabel"
               >EMAIL<span class="symbol">*</span></label
             >
-            <input type="text" placeholder="Moussawebdev@gmail.com" />
+            <input
+              type="email"
+              name="Email"
+              placeholder="itsmoussadev@gmail.com"
+              required
+            />
             <label for="text" class="thirdLabel"
               >MESSAGE<span class="symbol">*</span></label
             >
             <textarea
-              name=""
+              name="Message"
               id=""
               cols="30"
               rows="10"
               placeholder="Hello mr.handsome"
+              required
             ></textarea>
-            <button>Send</button>
+            <button type="submit">Send</button>
           </form>
         </div>
         <div class="contact-pic">
@@ -171,8 +183,6 @@
       </div>
     </section>
     <div class="sidenav">
-      <h3 class="sideLogo">MOU<span>SSA</span></h3>
-
       <div class="sideHome">
         <i class="bx bx-home-alt-2" id="sideIcon1"></i>
         <a href="#Home">Home</a>
